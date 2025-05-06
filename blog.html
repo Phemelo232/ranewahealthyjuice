@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Ranewa Healthy Juices' blog for organic smoothie recipes, health tips, and wellness inspiration in Botswana.">
+    <title>Blog | Ranewa Healthy Juices</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="images/logo.png" alt="Ranewa Healthy Juices Logo" class="logo">
+            <div class="title-nav">
+                <h1>RANEWA HEALTHY JUICES</h1>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="blog.html" class="active">Blog</a></li>
+                        <li><a href="contactus.html">Contact Us</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Wellness Insights & Recipes</h2>
+            <p>Discover organic smoothie recipes, health tips, and inspiration to live healthier with Ranewa Healthy Juices.</p>
+            <a href="#blog-posts" class="btn primary-btn">Read Our Blog <i class="fas fa-arrow-right"></i></a>
+        </section>
+
+        <section id="blog-posts" class="section">
+            <h3 class="section-title">Our Blog</h3>
+            <div class="category-tabs">
+                <button class="tab-btn active" data-category="all" aria-label="Show all blog posts" aria-selected="true" aria-controls="blog-posts">All</button>
+                <button class="tab-btn" data-category="recipes" aria-label="Show recipe posts" aria-selected="false" aria-controls="blog-posts">Recipes</button>
+                <button class="tab-btn" data-category="health-tips" aria-label="Show health tips posts" aria-selected="false" aria-controls="blog-posts">Health Tips</button>
+            </div>
+            <div class="grid-container">
+                <div class="card blog-post" data-category="recipes">
+                    <img src="images/ts.jpg" alt="Tropical Smoothie Recipe" loading="lazy">
+                    <div class="blog-meta">
+                        <span class="tag">Recipe</span>
+                        <span>April 20, 2025</span>
+                    </div>
+                    <h4>Tropical Smoothie Bliss</h4>
+                    <p>Learn how to make a refreshing tropical smoothie with mango, pineapple, and coconut water.</p>
+                    <a href="post1.html" class="btn secondary-btn" aria-label="Read more about Tropical Smoothie Bliss">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="card blog-post" data-category="recipes">
+                    <img src="images/gt2.jpg" alt="Green Detox Smoothie Recipe" loading="lazy">
+                    <div class="blog-meta">
+                        <span class="tag">Recipe</span>
+                        <span>April 15, 2025</span>
+                    </div>
+                    <h4>Green Detox Smoothie</h4>
+                    <p>Boost your day with this nutrient-packed green smoothie featuring spinach and avocado.</p>
+                    <a href="post2.html" class="btn secondary-btn" aria-label="Read more about Green Detox Smoothie">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="card blog-post" data-category="health-tips">
+                    <img src="images/im.jpg" alt="Boost Immunity Tips" loading="lazy">
+                    <div class="blog-meta">
+                        <span class="tag">Health Tip</span>
+                        <span>April 10, 2025</span>
+                    </div>
+                    <h4>5 Ways to Boost Your Immunity</h4>
+                    <p>Simple tips to strengthen your immune system with diet and lifestyle changes.</p>
+                    <a href="post3.html" class="btn secondary-btn" aria-label="Read more about 5 Ways to Boost Your Immunity">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="section-title">Join Our Community</h3>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto 1rem;">Stay updated on new recipes, health tips, and exclusive offers by joining our newsletter.</p>
+            <form id="newsletter-form" class="form" action="https://formspree.io/f/mock-endpoint" method="POST">
+                <input type="email" name="email" placeholder="Your email address" required aria-label="Enter your email to subscribe" aria-describedby="email-label">
+                <label id="email-label" class="sr-only">Email for newsletter subscription</label>
+                <div id="form-message" style="display: none; text-align: center; margin-top: 0.5rem;"></div>
+                <button type="submit" class="btn primary-btn">Subscribe <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </section>
+
+        <section id="cart-preview" class="cart-preview">
+            <div class="cart-header">
+                <h3>Your Cart</h3>
+                <i class="fas fa-times close-cart" aria-label="Close cart"></i>
+            </div>
+            <div class="cart-items"></div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span class="total-amount">BWP0.00</span>
+                </div>
+                <a href="shop.html#cart-preview" class="btn primary-btn checkout-btn">Proceed to Checkout</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contactus.html">Contact</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Opening Hours</h3>
+                <p>Mon-Fri: 7am - 7pm</p>
+                <p>Sat: 8am - 6pm</p>
+                <p>Sun: 9am - 4pm</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Ranewa Healthy Juices. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="blog-script.js"></script>
+</body>
+</html>
