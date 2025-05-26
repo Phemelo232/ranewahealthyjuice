@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Shop premium organic smoothies, fruit salads, and subscription plans at Ranewa Healthy Juices. Customize your healthy blends with fresh, local ingredients.">
-    <title>Shop | Ranewa Healthy Juices</title>
+    <meta name="description" content="Welcome to Ranewa Healthy Juices, your source for organic smoothies and fruit salads in Botswana. Explore our vibrant, healthy menu!">
+    <title>Home | Ranewa Healthy Juices</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
 <body>
     <header>
         <div class="header-content">
-            <img src="images/logo.png" alt="Ranewa Healthy Juices Logo" class="logo">
+            <a href="index.html"><img src="images/logo.png" alt="Ranewa Healthy Juices Logo" class="logo"></a>
             <div class="title-nav">
                 <h1>RANEWA HEALTHY JUICES</h1>
                 <nav>
@@ -28,177 +28,178 @@
             </div>
         </div>
     </header>
-
     <main>
         <section class="hero">
-            <h2>Premium Organic Creations</h2>
-            <p>Experience the finest smoothies and fruit salads, crafted with 100% organic, locally sourced ingredients to nourish your body and elevate your wellness.</p>
+            <div class="hero-content">
+                <h2>Premium Organic Creations</h2>
+                <p>Experience the finest smoothies and fruit salads, crafted with 100% organic, locally sourced ingredients to nourish your body and elevate your wellness.</p>
+            </div>
         </section>
 
         <section class="section">
-            <h3 class="section-title">Shop Our Healthy Offerings</h3>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">At Ranewa Healthy Juices, every product is designed to support your health goals. Choose from our signature smoothies, vibrant fruit salads, or exclusive subscription plans for daily wellness.</p>
+            <h2 class="section-title">Shop Our Healthy Offerings</h2>
+            <p>At Ranewa Healthy Juices, every product is designed to support your health goals. Choose from our signature smoothies, vibrant fruit salads, or exclusive subscription plans for daily wellness.</p>
             <div class="category-tabs">
-                <button class="tab-btn active" data-tab="smoothies" role="tab" aria-selected="true" aria-controls="smoothies">Smoothies</button>
-                <button class="tab-btn" data-tab="salads" role="tab" aria-selected="false" aria-controls="salads">Fruit Salads</button>
-                <button class="tab-btn" data-tab="subscriptions" role="tab" aria-selected="false" aria-controls="subscriptions">Subscriptions</button>
+                <button class="tab-btn active" data-tab="smoothies" aria-selected="true">Smoothies</button>
+                <button class="tab-btn" data-tab="fruit-salads" aria-selected="false">Fruit Salads</button>
+                <button class="tab-btn" data-tab="subscriptions" aria-selected="false">Subscriptions</button>
             </div>
 
             <div id="smoothies" class="category-content active">
-                <h3 class="section-title">Signature Smoothies</h3>
+                <h3>Signature Smoothies</h3>
                 <div class="grid-container">
                     <div class="card">
-                        <img src="images/ts.jpg" alt="Tropical Sunrise Smoothie" loading="lazy">
+                        <img src="images/ts2.jpg" alt="Tropical Sunrise">
                         <h4>Tropical Sunrise</h4>
                         <p>A vibrant blend of pineapple, mango, and orange, packed with Vitamin C for immune support. 150 kcal. BWP 45.00</p>
                         <div class="quantity-controls">
-                            <button class="qty-btn minus" aria-label="Decrease quantity">-</button>
+                            <button class="qty-btn minus">-</button>
                             <span class="quantity">1</span>
-                            <button class="qty-btn plus" aria-label="Increase quantity">+</button>
+                            <button class="qty-btn plus">+</button>
                         </div>
-                        <button class="btn primary-btn add-to-cart" data-product="Tropical Sunrise" data-price="45.00" data-image="images/ts.jpg">Add to Cart</button>
+                        <button class="btn primary-btn add-to-cart">Add to Cart</button>
                     </div>
                     <div class="card">
-                        <img src="images/bb2.jpg" alt="Berry Blast Smoothie" loading="lazy">
+                        <img src="images/bb2.jpg" alt="Berry Blast">
                         <h4>Berry Blast</h4>
                         <p>Strawberry, blueberry, and banana with antioxidants to boost energy. 180 kcal. BWP 50.00</p>
                         <div class="quantity-controls">
-                            <button class="qty-btn minus" aria-label="Decrease quantity">-</button>
+                            <button class="qty-btn minus">-</button>
                             <span class="quantity">1</span>
-                            <button class="qty-btn plus" aria-label="Increase quantity">+</button>
+                            <button class="qty-btn plus">+</button>
                         </div>
-                        <button class="btn primary-btn add-to-cart" data-product="Berry Blast" data-price="50.00" data-image="images/bb2.jpg">Add to Cart</button>
+                        <button class="btn primary-btn add-to-cart">Add to Cart</button>
                     </div>
                     <div class="card">
-                        <img src="images/gt2.jpg" alt="Green Detox Smoothie" loading="lazy">
+                        <img src="images/gt2.jpg" alt="Green Detox">
                         <h4>Green Detox</h4>
                         <p>Spinach, kale, apple, and cucumber for a cleansing, nutrient-rich boost. 120 kcal. BWP 48.00</p>
                         <div class="quantity-controls">
-                            <button class="qty-btn minus" aria-label="Decrease quantity">-</button>
+                            <button class="qty-btn minus">-</button>
                             <span class="quantity">1</span>
-                            <button class="qty-btn plus" aria-label="Increase quantity">+</button>
+                            <button class="qty-btn plus">+</button>
                         </div>
-                        <button class="btn primary-btn add-to-cart" data-product="Green Detox" data-price="48.00" data-image="images/gt2.jpg">Add to Cart</button>
+                        <button class="btn primary-btn add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="card custom-builder smoothie-builder">
+                        <h4>Build Your Own Smoothie</h4>
+                        <p>Create a personalized blend with your favorite ingredients.</p>
+                        <div class="builder-options">
+                            <div class="option-group">
+                                <h5>Base (Choose 1)</h5>
+                                <div class="option-item"><input type="radio" name="base" value="water"><span>Water (+BWP20)</span></div>
+                                <div class="option-item"><input type="radio" name="base" value="milk"><span>Milk (+BWP25)</span></div>
+                                <div class="option-item"><input type="radio" name="base" value="almond-milk"><span>Almond Milk (+BWP30)</span></div>
+                                <div class="option-item"><input type="radio" name="base" value="coconut-water"><span>Coconut Water (+BWP28)</span></div>
+                            </div>
+                            <div class="option-group">
+                                <h5>Fruits (Max 4)</h5>
+                                <div class="option-item"><input type="checkbox" name="fruits" value="mango"><span>Mango (+BWP10)</span></div>
+                                <div class="option-item"><input type="checkbox" name="fruits" value="banana"><span>Banana (+BWP8)</span></div>
+                                <div class="option-item"><input type="checkbox" name="fruits" value="strawberry"><span>Strawberry (+BWP12)</span></div>
+                                <div class="option-item"><input type="checkbox" name="fruits" value="pineapple"><span>Pineapple (+BWP10)</span></div>
+                                <div class="option-item"><input type="checkbox" name="fruits" value="blueberry"><span>Blueberry (+BWP15)</span></div>
+                            </div>
+                            <div class="option-group">
+                                <h5>Toppings (Optional)</h5>
+                                <div class="option-item"><input type="checkbox" name="addons" value="chia-seeds"><span>Chia Seeds (+BWP5)</span></div>
+                                <div class="option-item"><input type="checkbox" name="addons" value="protein-powder"><span>Protein Powder (+BWP10)</span></div>
+                                <div class="option-item"><input type="checkbox" name="addons" value="granola"><span>Granola (+BWP7)</span></div>
+                            </div>
+                        </div>
+                        <div class="builder-footer">
+                            <span class="builder-price">Total: BWP0.00</span>
+                            <button class="btn primary-btn add-to-cart">Add Custom to Cart</button>
+                        </div>
                     </div>
                 </div>
-                <div class="card custom-builder" id="smoothie-builder">
-                    <h4>Build Your Own Smoothie</h4>
-                    <p>Create a personalized blend with your favorite ingredients.</p>
-                    <div class="builder-options">
-                        <div class="option-group">
-                            <h5>Base (Choose 1)</h5>
-                            <div class="option-item"><input type="radio" name="base" value="water" data-price="20" required> Water (+BWP20)</div>
-                            <div class="option-item"><input type="radio" name="base" value="milk" data-price="25"> Milk (+BWP25)</div>
-                            <div class="option-item"><input type="radio" name="base" value="almond-milk" data-price="30"> Almond Milk (+BWP30)</div>
-                            <div class="option-item"><input type="radio" name="base" value="coconut-water" data-price="28"> Coconut Water (+BWP28)</div>
-                        </div>
-                        <div class="option-group">
-                            <h5>Fruits (Max 4)</h5>
-                            <div class="option-item"><input type="checkbox" name="fruits" value="mango" data-price="10"> Mango (+BWP10)</div>
-                            <div class="option-item"><input type="checkbox" name="fruits" value="banana" data-price="8"> Banana (+BWP8)</div>
-                            <div class="option-item"><input type="checkbox" name="fruits" value="strawberry" data-price="12"> Strawberry (+BWP12)</div>
-                            <div class="option-item"><input type="checkbox" name="fruits" value="pineapple" data-price="10"> Pineapple (+BWP10)</div>
-                            <div class="option-item"><input type="checkbox" name="fruits" value="blueberry" data-price="15"> Blueberry (+BWP15)</div>
-                        </div>
-                        <div class="option-group">
-                            <h5>Toppings (Optional)</h5>
-                            <div class="option-item"><input type="checkbox" name="toppings" value="chia-seeds" data-price="5"> Chia Seeds (+BWP5)</div>
-                            <div class="option-item"><input type="checkbox" name="toppings" value="protein-powder" data-price="10"> Protein Powder (+BWP10)</div>
-                            <div class="option-item"><input type="checkbox" name="toppings" value="granola" data-price="7"> Granola (+BWP7)</div>
-                        </div>
-                    </div>
-                    <div class="builder-footer">
-                        <span class="builder-price">Total: BWP0.00</span>
-                        <button class="btn primary-btn add-to-cart" data-product="Custom Smoothie" data-price="0.00">Add Custom to Cart</button>
-                    </div>
-                </div>
-                <button class="btn secondary-btn customize-btn" data-target="smoothie-builder">Build Your Own Smoothie</button>
+                <button class="btn primary-btn customize-btn">Build Your Own Smoothie</button>
             </div>
 
-            <div id="salads" class="category-content">
-                <h3 class="section-title">Vibrant Fruit Salads</h3>
+            <div id="fruit-salads" class="category-content">
+                <h3>Vibrant Fruit Salads</h3>
                 <div class="grid-container">
                     <div class="card">
-                        <img src="images/rbf.jpg" alt="Rainbow Fruit Salad" loading="lazy">
+                        <img src="images/rbf.jpg" alt="Rainbow Fruit Salad">
                         <h4>Rainbow Fruit Salad</h4>
                         <p>Mixed seasonal fruits with a honey-lime drizzle, rich in fiber and vitamins. 200 kcal. BWP 40.00</p>
                         <div class="quantity-controls">
-                            <button class="qty-btn minus" aria-label="Decrease quantity">-</button>
+                            <button class="qty-btn minus">-</button>
                             <span class="quantity">1</span>
-                            <button class="qty-btn plus" aria-label="Increase quantity">+</button>
+                            <button class="qty-btn plus">+</button>
                         </div>
-                        <button class="btn primary-btn add-to-cart" data-product="Rainbow Fruit Salad" data-price="40.00" data-image="images/rbf.jpg">Add to Cart</button>
+                        <button class="btn primary-btn add-to-cart">Add to Cart</button>
                     </div>
                     <div class="card">
-                        <img src="images/td.webp" alt="Tropical Delight Salad" loading="lazy">
+                        <img src="images/td.webp" alt="Tropical Delight">
                         <h4>Tropical Delight</h4>
                         <p>Pineapple, mango, and kiwi with a coconut yogurt dressing. 220 kcal. BWP 45.00</p>
                         <div class="quantity-controls">
-                            <button class="qty-btn minus" aria-label="Decrease quantity">-</button>
+                            <button class="qty-btn minus">-</button>
                             <span class="quantity">1</span>
-                            <button class="qty-btn plus" aria-label="Increase quantity">+</button>
+                            <button class="qty-btn plus">+</button>
                         </div>
-                        <button class="btn primary-btn add-to-cart" data-product="Tropical Delight" data-price="45.00" data-image="images/td.webp">Add to Cart</button>
+                        <button class="btn primary-btn add-to-cart">Add to Cart</button>
                     </div>
                     <div class="card">
-                        <img src="images/ber.jpg" alt="Berry Medley Salad" loading="lazy">
+                        <img src="images/bm.jpg" alt="Berry Medley">
                         <h4>Berry Medley</h4>
                         <p>Strawberries, blueberries, and raspberries with a mint yogurt drizzle. 180 kcal. BWP 42.00</p>
                         <div class="quantity-controls">
-                            <button class="qty-btn minus" aria-label="Decrease quantity">-</button>
+                            <button class="qty-btn minus">-</button>
                             <span class="quantity">1</span>
-                            <button class="qty-btn plus" aria-label="Increase quantity">+</button>
+                            <button class="qty-btn plus">+</button>
                         </div>
-                        <button class="btn primary-btn add-to-cart" data-product="Berry Medley" data-price="42.00" data-image="images/ber.jpg">Add to Cart</button>
+                        <button class="btn primary-btn add-to-cart">Add to Cart</button>
                     </div>
                     <div class="card">
-                        <img src="images/ct.jpg" alt="Citrus Burst Salad" loading="lazy">
+                        <img src="images/ct.jpg" alt="Citrus Burst">
                         <h4>Citrus Burst</h4>
                         <p>Orange, grapefruit, and pomegranate with a citrus zest dressing. 190 kcal. BWP 43.00</p>
                         <div class="quantity-controls">
-                            <button class="qty-btn minus" aria-label="Decrease quantity">-</button>
+                            <button class="qty-btn minus">-</button>
                             <span class="quantity">1</span>
-                            <button class="qty-btn plus" aria-label="Increase quantity">+</button>
+                            <button class="qty-btn plus">+</button>
                         </div>
-                        <button class="btn primary-btn add-to-cart" data-product="Citrus Burst" data-price="43.00" data-image="images/ct.jpg">Add to Cart</button>
+                        <button class="btn primary-btn add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="card custom-builder fruit-salad-builder">
+                        <h4>Build Your Own Fruit Salad</h4>
+                        <p>Customize your salad with fresh fruits and premium add-ons.</p>
+                        <div class="builder-options">
+                            <div class="option-group">
+                                <h5>Fruits (Max 4)</h5>
+                                <div class="option-item"><input type="checkbox" name="fruits" value="mango"><span>Mango (+BWP10)</span></div>
+                                <div class="option-item"><input type="checkbox" name="fruits" value="kiwi"><span>Kiwi (+BWP12)</span></div>
+                                <div class="option-item"><input type="checkbox" name="fruits" value="pomegranate"><span>Pomegranate (+BWP15)</span></div>
+                                <div class="option-item"><input type="checkbox" name="fruits" value="orange"><span>Orange (+BWP8)</span></div>
+                            </div>
+                            <div class="option-group">
+                                <h5>Dressing (Choose 1)</h5>
+                                <div class="option-item"><input type="radio" name="dressing" value="honey-lime"><span>Honey-Lime (+BWP5)</span></div>
+                                <div class="option-item"><input type="radio" name="dressing" value="yogurt"><span>Yogurt (+BWP7)</span></div>
+                                <div class="option-item"><input type="radio" name="dressing" value="mint"><span>Mint (+BWP6)</span></div>
+                            </div>
+                            <div class="option-group">
+                                <h5>Add-Ons (Optional)</h5>
+                                <div class="option-item"><input type="checkbox" name="addons" value="almonds"><span>Almonds (+BWP10)</span></div>
+                                <div class="option-item"><input type="checkbox" name="addons" value="granola"><span>Granola (+BWP7)</span></div>
+                            </div>
+                        </div>
+                        <div class="builder-footer">
+                            <span class="builder-price">Total: BWP0.00</span>
+                            <button class="btn primary-btn add-to-cart">Add Custom to Cart</button>
+                        </div>
                     </div>
                 </div>
-                <div class="card custom-builder" id="salad-builder">
-                    <h4>Build Your Own Fruit Salad</h4>
-                    <p>Customize your salad with fresh fruits and premium add-ons.</p>
-                    <div class="builder-options">
-                        <div class="option-group">
-                            <h5>Fruits (Max 4)</h5>
-                            <div class="option-item"><input type="checkbox" name="salad-fruits" value="mango" data-price="10"> Mango (+BWP10)</div>
-                            <div class="option-item"><input type="checkbox" name="salad-fruits" value="kiwi" data-price="12"> Kiwi (+BWP12)</div>
-                            <div class="option-item"><input type="checkbox" name="salad-fruits" value="pomegranate" data-price="15"> Pomegranate (+BWP15)</div>
-                            <div class="option-item"><input type="checkbox" name="salad-fruits" value="orange" data-price="8"> Orange (+BWP8)</div>
-                        </div>
-                        <div class="option-group">
-                            <h5>Dressing (Choose 1)</h5>
-                            <div class="option-item"><input type="radio" name="dressing" value="honey-lime" data-price="5" required> Honey-Lime (+BWP5)</div>
-                            <div class="option-item"><input type="radio" name="dressing" value="yogurt" data-price="7"> Yogurt (+BWP7)</div>
-                            <div class="option-item"><input type="radio" name="dressing" value="mint" data-price="6"> Mint (+BWP6)</div>
-                        </div>
-                        <div class="option-group">
-                            <h5>Add-Ons (Optional)</h5>
-                            <div class="option-item"><input type="checkbox" name="salad-addons" value="almonds" data-price="10"> Almonds (+BWP10)</div>
-                            <div class="option-item"><input type="checkbox" name="salad-addons" value="granola" data-price="7"> Granola (+BWP7)</div>
-                        </div>
-                    </div>
-                    <div class="builder-footer">
-                        <span class="builder-price">Total: BWP0.00</span>
-                        <button class="btn primary-btn add-to-cart" data-product="Custom Fruit Salad" data-price="0.00">Add Custom to Cart</button>
-                    </div>
-                </div>
-                <button class="btn secondary-btn customize-btn" data-target="salad-builder">Build Your Own Fruit Salad</button>
+                <button class="btn primary-btn customize-btn">Build Your Own Fruit Salad</button>
             </div>
 
             <div id="subscriptions" class="category-content">
-                <h3 class="section-title">Subscription Plans</h3>
-                <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Join our subscription plans for daily or weekly deliveries, exclusive discounts, and priority access to new products.</p>
+                <h3>Subscription Plans</h3>
+                <p>Join our subscription plans for daily or weekly deliveries, exclusive discounts, and priority access to new products.</p>
                 <div class="grid-container">
-                    <div class="card subscription-card featured">
+                    <div class="card subscription-card">
                         <span class="subscription-badge">Recommended</span>
                         <h4>Daily Plan</h4>
                         <p>1 smoothie or salad daily, with free delivery and 10% off. BWP 900.00/month</p>
@@ -207,7 +208,7 @@
                             <li><i class="fas fa-check"></i> 10% discount</li>
                             <li><i class="fas fa-check"></i> Priority access</li>
                         </ul>
-                        <button class="btn primary-btn add-to-cart" data-product="Daily Plan" data-price="900.00">Subscribe Now</button>
+                        <button class="btn primary-btn">Subscribe Now</button>
                     </div>
                     <div class="card subscription-card">
                         <h4>Weekly Plan</h4>
@@ -217,7 +218,7 @@
                             <li><i class="fas fa-check"></i> Free delivery</li>
                             <li><i class="fas fa-check"></i> Flexible choices</li>
                         </ul>
-                        <button class="btn primary-btn add-to-cart" data-product="Weekly Plan" data-price="200.00">Subscribe Now</button>
+                        <button class="btn primary-btn">Subscribe Now</button>
                     </div>
                     <div class="card subscription-card">
                         <h4>Monthly Plan</h4>
@@ -227,35 +228,40 @@
                             <li><i class="fas fa-check"></i> 15% discount</li>
                             <li><i class="fas fa-check"></i> Customizable</li>
                         </ul>
-                        <button class="btn primary-btn add-to-cart" data-product="Monthly Plan" data-price="750.00">Subscribe Now</button>
+                        <button class="btn primary-btn">Subscribe Now</button>
                     </div>
-                </div>
-                <div class="card">
-                    <h4>Why Subscribe?</h4>
-                    <p>Our subscription plans offer convenience, savings, and consistent nutrition. Enjoy:</p>
-                    <ul class="subscription-features">
-                        <li><i class="fas fa-check"></i> Hassle-free delivery to your door</li>
-                        <li><i class="fas fa-check"></i> Exclusive discounts on every order</li>
-                        <li><i class="fas fa-check"></i> Flexible cancellation anytime</li>
-                        <li><i class="fas fa-check"></i> Priority access to seasonal specials</li>
-                    </ul>
-                    <a href="contactus.html" class="btn secondary-btn">Have Questions? Contact Us</a>
+                    <div class="card">
+                        <h4>Why Subscribe?</h4>
+                        <p>Our subscription plans offer convenience, savings, and consistent nutrition. Enjoy:</p>
+                        <ul class="subscription-features">
+                            <li><i class="fas fa-check"></i> Hassle-free delivery to your door</li>
+                            <li><i class="fas fa-check"></i> Exclusive discounts on every order</li>
+                            <li><i class="fas fa-check"></i> Flexible cancellation anytime</li>
+                            <li><i class="fas fa-check"></i> Priority access to seasonal specials</li>
+                        </ul>
+                        <a href="contactus.html" class="btn primary-btn">Have Questions? Contact Us</a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="cart-preview" class="cart-preview">
-            <div class="cart-header">
-                <h3>Your Cart</h3>
-                <i class="fas fa-times close-cart" aria-label="Close cart"></i>
-            </div>
-            <div class="cart-items"></div>
-            <div class="cart-footer">
-                <div class="cart-total">
-                    <span>Total:</span>
-                    <span class="total-amount">BWP0.00</span>
+        <section class="section">
+            <h2 class="section-title">Your Cart</h2>
+            <div class="cart-preview">
+                <div class="cart-header">
+                    <h3>Your Cart</h3>
+                    <span class="close-cart"><i class="fas fa-times"></i></span>
                 </div>
-                <a href="checkout.html" class="btn primary-btn checkout-btn">Proceed to Checkout</a>
+                <div class="cart-items">
+                    <p class="empty-cart">Your cart is empty</p>
+                </div>
+                <div class="cart-footer">
+                    <div class="cart-total">
+                        <span>Total:</span>
+                        <span class="total-amount">BWP0.00</span>
+                    </div>
+                    <a href="checkout.html" class="btn primary-btn checkout-btn">Proceed to Checkout</a>
+                </div>
             </div>
         </section>
     </main>
@@ -281,9 +287,9 @@
             <div class="footer-section">
                 <h3>Follow Us</h3>
                 <div class="social-icons">
-                    <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="#" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
