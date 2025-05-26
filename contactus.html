@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Ranewa Healthy Juices for inquiries, feedback, or support. Reach us via our form, phone, email, or visit our store.">
-    <title>Contact Us | Ranewa Healthy Juices</title>
+    <meta name="description" content="Welcome to Ranewa Healthy Juices, your source for organic smoothies and fruit salads in Botswana. Explore our vibrant, healthy menu!">
+    <title>Home | Ranewa Healthy Juices</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -12,54 +12,45 @@
 <body>
     <header>
         <div class="header-content">
-            <img src="images/logo.png" alt="Ranewa Healthy Juices Logo" class="logo">
+            <a href="index.html" class="logo-link"><img src="images/logo.png" alt="Ranewa Healthy Juices Logo" class="logo"></a>
             <div class="title-nav">
                 <h1>RANEWA HEALTHY JUICES</h1>
                 <nav>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html" >Home</a></li>
                         <li><a href="shop.html">Shop</a></li>
                         <li><a href="blog.html">Blog</a></li>
                         <li><a href="contactus.html" class="active">Contact Us</a></li>
                         <li><a href="aboutus.html">About Us</a></li>
-                        <li><a href="shop.html#cart" class="cart-icon"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a></li>
+                        <li><a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <h2>Get in Touch</h2>
-            <p>We’re here to answer your questions and hear your feedback.</p>
-        </section>
-
-        <section class="section">
-            <div class="grid-container">
-                <div class="card">
-                    <h3>Send Us a Message</h3>
-                    <form class="form" action="https://formspree.io/your-email" method="POST">
-                        <input type="text" name="name" placeholder="Your name" required aria-label="Your name" aria-describedby="name-label">
-                        <label id="name-label" class="sr-only">Name</label>
-                        <input type="email" name="email" placeholder="Your email" required aria-label="Your email" aria-describedby="email-label">
-                        <label id="email-label" class="sr-only">Email</label>
-                        <input type="text" name="subject" placeholder="Subject" required aria-label="Subject" aria-describedby="subject-label">
-                        <label id="subject-label" class="sr-only">Subject</label>
-                        <textarea name="message" placeholder="Your message" rows="5" required aria-label="Your message" aria-describedby="message-label"></textarea>
-                        <label id="message-label" class="sr-only">Message</label>
-                        <button type="submit" class="btn primary-btn">Send <i class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
-                <div class="card">
-                    <h3>Contact Information</h3>
-                    <ul class="contact-details">
-                        <li><i class="fas fa-map-marker-alt"></i> 716 Matshelagabedi, Francistown, Botswana</li>
-                        <li><i class="fas fa-phone"></i> +267 763 591 60</li>
-                        <li><i class="fas fa-envelope"></i> info@ranewahealthyjuices.com</li>
-                        <li><i class="fas fa-clock"></i> Mon-Fri: 7am-7pm, Sat: 8am-6pm, Sun: 9am-4pm</li>
-                    </ul>
-					<div class="map">
+    <section class="contact-container">
+        <div class="sidebar">
+            <h3>Contact Info</h3>
+            <img src="images/logo.jpeg" alt="Speed Star Motors Location">
+            <p><strong>Visit Us:</strong> P O Box 2309, Francistown, Botswana</p>
+            <p><strong>Phone:</strong> 76359160</p>
+            <p><strong>Email:</strong> <a href="mailto:speedstarmotors@gmail.com">speedstarmotors@gmail.com</a></p>
+            <p><strong>Operating Hours:</strong></p>
+            <ul>
+                <li>Mon - Fri: 8:00 AM - 5:00 PM</li>
+                <li>Sat: 9:00 AM - 1:00 PM</li>
+                <li>Sun: Closed</li>
+            </ul>
+            <p><strong>Follow Us:</strong></p>
+            <div class="social-links">
+                <a href="https://facebook.com/speedstarmotors" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/speedstarmotors" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/speedstarmotors" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p><em>"Drive the Future with Speed Star Motors!"</em></p>
+        </div>
+        <div class="map">
             <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d232318.55441396786!2d27.3463510921875!3d-21.170240999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1eb5b5b7b9f0b5b7%3A0x2f0f0f0f0f0f0f0f!2sFrancistown%2C%20Botswana!5e0!3m2!1sen!2sus!4v1677654321!5m2!1sen!2sus" 
                 width="100%" 
@@ -70,43 +61,31 @@
                 referrerpolicy="no-referrer-when-downgrade">
             </iframe>
         </div>
+        <div class="main-content">
+            <h2>Get in Touch</h2>
+            <p>Have questions? Fill out the form below and we'll get back to you soon!</p>
+            <form action="#" method="POST">
+                <div class="input-box">
+                    <input type="text" name="fullname" required>
+                    <span>Full Name</span>
                 </div>
-            </div>
-        </section>
-    </main>
+                <div class="input-box">
+                    <input type="email" name="email" required>
+                    <span>Email</span>
+                </div>
+                <div class="input-box">
+                    <textarea name="message" required></textarea>
+                    <span>Type Your Message...</span>
+                </div>
+                <div class="input-box">
+                    <input type="submit" name="submit" value="Send">
+                </div>
+            </form>
+        </div>
+    </section>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="shop.html">Shop</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contactus.html">Contact</a></li>
-                    <li><a href="aboutus.html">About Us</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Opening Hours</h3>
-                <p>Mon-Fri: 7am - 7pm</p>
-                <p>Sat: 8am - 6pm</p>
-                <p>Sun: 9am - 4pm</p>
-            </div>
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <div class="social-icons">
-                    <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="#" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2025 Ranewa Healthy Juices. All rights reserved.</p>
-        </div>
+        <p>© 2025 Speed Star Motors. All rights reserved.</p>
     </footer>
-
-    <script src="contact-script.js"></script>
 </body>
 </html>
