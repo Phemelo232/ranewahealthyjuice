@@ -18,8 +18,8 @@
                 <nav>
                     <ul>
                         <li><a href="index.html" >Home</a></li>
-                        <li><a href="shop.html">Shop</a></li>
-                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="shop.html" >Shop</a></li>
+                        <li><a href="blog.html" >Blog</a></li>
                         <li><a href="contactus.html">Contact Us</a></li>
                         <li><a href="aboutus.html">About Us</a></li>
                         <li><a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a></li>
@@ -28,49 +28,34 @@
             </div>
         </div>
     </header>
-
+	
     <main>
         <section class="section">
-            <div class="post-container">
-                <h2>Tropical Smoothie Recipe</h2>
-                <div class="blog-meta">
-                    <span>May 20, 2025</span>
-                    <span>Jane Doe</span>
-                    <span class="tag">Recipes</span>
-                </div>
-                <img src="images/ts2.jpg" alt="Tropical Smoothie" class="post-image">
-                <div class="post-content">
-                    <p>Escape to the tropics with this refreshing smoothie recipe, perfect for a healthy breakfast or snack.</p>
-                    <h3>Ingredients</h3>
-                    <ul>
-                        <li>1 cup pineapple chunks</li>
-                        <li>1 banana</li>
-                        <li>1/2 cup mango chunks</li>
-                        <li>1 cup coconut milk</li>
-                        <li>1 tbsp chia seeds</li>
-                    </ul>
-                    <h3>Instructions</h3>
-                    <ol>
-                        <li>Combine all ingredients in a blender.</li>
-                        <li>Blend until smooth.</li>
-                        <li>Pour into a glass and enjoy!</li>
-                    </ol>
-                    <p>Try adding a handful of spinach for an extra nutrient boost!</p>
-                </div>
+            <h2 class="section-title">Your Cart</h2>
+            <div class="cart-items">
+                <p class="empty-cart">Your cart is empty</p>
             </div>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">Subscribe to Our Newsletter</h2>
-            <form class="form newsletter" action="/api/newsletter" method="POST">
-                <input type="email" name="email" placeholder="Email Address" required>
-                <button type="submit" class="btn primary-btn">Subscribe</button>
-            </form>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span class="total-amount">BWP0.00</span>
+                </div>
+                <a href="checkout.html" class="btn primary-btn checkout-btn">Proceed to Checkout</a>
+            </div>
         </section>
     </main>
 
     <footer>
         <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul class="contact-details">
+                    <li><i class="fas fa-map-marker-alt"></i> 716 Matshelagabedi, Francistown, Botswana</li>
+                    <li><i class="fas fa-phone"></i> +267 763 591 60</li>
+                    <li><i class="fas fa-envelope"></i> info@ranewahealthyjuices.com</li>
+                    <li><i class="fas fa-clock"></i> Mon-Fri: 7am-7pm, Sat: 8am-6pm, Sun: 9am-4pm</li>
+                </ul>
+            </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
@@ -80,12 +65,6 @@
                     <li><a href="contactus.html">Contact</a></li>
                     <li><a href="aboutus.html">About Us</a></li>
                 </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Opening Hours</h3>
-                <p>Mon-Fri: 7am - 7pm</p>
-                <p>Sat: 8am - 6pm</p>
-                <p>Sun: 9am - 4pm</p>
             </div>
             <div class="footer-section">
                 <h3>Follow Us</h3>

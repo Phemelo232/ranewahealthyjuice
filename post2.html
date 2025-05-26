@@ -3,51 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to Ranewa Healthy Juices, your source for organic smoothies and fruit salads in Botswana. Explore our vibrant, healthy menu!">
-    <title>Home | Ranewa Healthy Juices</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Green Detox Smoothie - Ranewa Healthy Juices</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="header-content">
-            <a href="index.html"><img src="images/logo.png" alt="Ranewa Healthy Juices Logo" class="logo"></a>
+            <img src="images/logo.png" alt="Ranewa Healthy Juices Logo" class="logo">
             <div class="title-nav">
-                <h1>RANEWA HEALTHY JUICES</h1>
                 <nav>
                     <ul>
-                        <li><a href="index.html" >Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="shop.html">Shop</a></li>
-                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="blog.html" class="active">Blog</a></li>
                         <li><a href="contactus.html">Contact Us</a></li>
                         <li><a href="aboutus.html">About Us</a></li>
-                        <li><a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a></li>
                     </ul>
                 </nav>
             </div>
+            <a href="cart.html" class="cart-icon" aria-label="View cart, 0 items">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </a>
         </div>
     </header>
 
     <main>
         <section class="section">
             <div class="post-container">
-                <h2>Tropical Smoothie Recipe</h2>
+                <h2>Green Detox Smoothie</h2>
                 <div class="blog-meta">
-                    <span>May 20, 2025</span>
+                    <span>April 15, 2025</span>
                     <span>Jane Doe</span>
                     <span class="tag">Recipes</span>
                 </div>
-                <img src="images/ts2.jpg" alt="Tropical Smoothie" class="post-image">
+                <img src="images/green-detox-smoothie.jpg" alt="Green Detox Smoothie" class="post-image">
                 <div class="post-content">
-                    <p>Escape to the tropics with this refreshing smoothie recipe, perfect for a healthy breakfast or snack.</p>
+                    <p>Boost your day with this nutrient-packed green smoothie, perfect for cleansing and energizing.</p>
                     <h3>Ingredients</h3>
                     <ul>
-                        <li>1 cup pineapple chunks</li>
-                        <li>1 banana</li>
-                        <li>1/2 cup mango chunks</li>
-                        <li>1 cup coconut milk</li>
-                        <li>1 tbsp chia seeds</li>
+                        <li>1 cup spinach</li>
+                        <li>1/2 avocado</li>
+                        <li>1 apple, cored</li>
+                        <li>1/2 cucumber</li>
+                        <li>1 cup coconut water</li>
                     </ul>
                     <h3>Instructions</h3>
                     <ol>
@@ -55,14 +54,14 @@
                         <li>Blend until smooth.</li>
                         <li>Pour into a glass and enjoy!</li>
                     </ol>
-                    <p>Try adding a handful of spinach for an extra nutrient boost!</p>
+                    <p>Try adding a squeeze of lemon for extra zing!</p>
                 </div>
             </div>
         </section>
 
         <section class="section">
             <h2 class="section-title">Subscribe to Our Newsletter</h2>
-            <form class="form newsletter" action="/api/newsletter" method="POST">
+            <form class="form" action="/api/newsletter" method="POST">
                 <input type="email" name="email" placeholder="Email Address" required>
                 <button type="submit" class="btn primary-btn">Subscribe</button>
             </form>
