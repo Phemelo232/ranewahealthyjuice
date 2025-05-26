@@ -1,21 +1,88 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Email Validation Function
+    function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
     // Newsletter Form
-    const form = document.querySelector('.form');
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const formData = new FormData(form);
-        try {
-            await fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            });
-            form.reset();
-            alert('Thank you for subscribing!');
-        } catch (error) {
-            alert('Error subscribing. Please try again.');
-        }
+    const newsletterForms = document.querySelectorAll('.form.newsletter');
+    newsletterForms.forEach(form => {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = form.querySelector('input[name="email"]').value;
+            if (!isValidEmail(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            const formData = new FormData(form);
+            try {
+                await fetch(form.action || '/api/newsletter', {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+                form.reset();
+                alert('Thank you for subscribing!');
+            } catch (error) {
+                alert('Error subscribing. Please try again.');
+            }
+        });
     });
+
+    // Contact Form
+    const contactForm = document.querySelector('.form.contact');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = contactForm.querySelector('input[name="email"]').value;
+            if (!isValidEmail(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            const formData = new FormData(contactForm);
+            try {
+                await fetch(contactForm.action || '/api/contact', {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+                contactForm.reset();
+                alert('Thank you for your message!');
+            } catch (error) {
+                alert('Error sending message. Please try again.');
+            }
+        });
+    }
+
+    // Feedback Form
+    const feedbackForm = document.querySelector('.form.feedback');
+    if (feedbackForm) {
+        feedbackForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = feedbackForm.querySelector('input[name="email"]').value;
+            const rating = feedbackForm.querySelector('select[name="rating"]').value;
+            if (!isValidEmail(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            if (!rating) {
+                alert('Please select a rating.');
+                return;
+            }
+            const formData = new FormData(feedbackForm);
+            try {
+                await fetch(feedbackForm.action || '/api/feedback', {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+                feedbackForm.reset();
+                alert('Thank you for your feedback!');
+            } catch (error) {
+                alert('Error submitting feedback. Please try again.');
+            }
+        });
+    }
 
     // Cart Count
     const cartCount = document.querySelector('.cart-count');
@@ -23,9 +90,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     cartCount.textContent = totalItems;
     document.querySelector('.cart-icon').setAttribute('aria-label', `View cart, ${totalItems} items`);
-});
-document.addEventListener('DOMContentLoaded', function() {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
     // Tab Switching
     document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -41,6 +105,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Category Tabs for Blog
+    const tabButtons = document.querySelectorAll('.tab-btn[data-category]');
+    const blogPosts = document.querySelectorAll('.blog-post');
+    if (tabButtons.length && blogPosts.length) {
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                const category = button.getAttribute('data-category');
+                blogPosts.forEach(post => {
+                    const postCategory = post.getAttribute('data-category');
+                    post.style.display = category === 'all' || category === postCategory ? 'block' : 'none';
+                });
+            });
+        });
+    }
+
     // Customize Button
     document.querySelectorAll('.customize-btn').forEach(btn => {
         btn.addEventListener('click', () => {
@@ -50,27 +131,33 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Custom Builder Price
-    function updateBuilderPrice() {
-        const basePrice = parseFloat(document.querySelector('input[name="base"]:checked')?.nextSibling.textContent.match(/\+BWP(\d+)/)?.[1] || 0);
+    function updateBuilderPrice(builder) {
+        const basePrice = parseFloat(builder.querySelector('input[name="base"]:checked')?.nextSibling.textContent.match(/\+BWP(\d+)/)?.[1] || 0);
         let fruitPrice = 0;
-        document.querySelectorAll('input[name="fruits"]:checked').forEach(fruit => {
+        builder.querySelectorAll('input[name="fruits"]:checked').forEach(fruit => {
             fruitPrice += parseFloat(fruit.nextSibling.textContent.match(/\+BWP(\d+)/)?.[1] || 0);
         });
-        const totalPrice = basePrice + fruitPrice;
-        document.querySelector('.builder-price').textContent = `Total: BWP${totalPrice.toFixed(2)}`;
+        let dressingPrice = parseFloat(builder.querySelector('input[name="dressing"]:checked')?.nextSibling.textContent.match(/\+BWP(\d+)/)?.[1] || 0);
+        let addonPrice = 0;
+        builder.querySelectorAll('input[name="addons"]:checked').forEach(addon => {
+            addonPrice += parseFloat(addon.nextSibling.textContent.match(/\+BWP(\d+)/)?.[1] || 0);
+        });
+        const totalPrice = basePrice + fruitPrice + dressingPrice + addonPrice;
+        builder.querySelector('.builder-price').textContent = `Total: BWP${totalPrice.toFixed(2)}`;
     }
 
-    document.querySelectorAll('input[name="base"], input[name="fruits"]').forEach(input => {
-        input.addEventListener('change', updateBuilderPrice);
-    });
-
-    document.querySelectorAll('input[name="fruits"]').forEach(checkbox => {
-        checkbox.addEventListener('change', () => {
-            if (document.querySelectorAll('input[name="fruits"]:checked').length > 3) {
-                checkbox.checked = false;
-                alert('Max 3 fruits allowed.');
-            }
-            updateBuilderPrice();
+    document.querySelectorAll('.custom-builder').forEach(builder => {
+        builder.querySelectorAll('input[name="base"], input[name="fruits"], input[name="dressing"], input[name="addons"]').forEach(input => {
+            input.addEventListener('change', () => updateBuilderPrice(builder));
+        });
+        builder.querySelectorAll('input[name="fruits"]').forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                if (builder.querySelectorAll('input[name="fruits"]:checked').length > 4) {
+                    checkbox.checked = false;
+                    alert('Max 4 fruits allowed.');
+                }
+                updateBuilderPrice(builder);
+            });
         });
     });
 
@@ -91,17 +178,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeCart = document.querySelector('.close-cart');
     const addToCartBtns = document.querySelectorAll('.add-to-cart');
     const cartItemsContainer = document.querySelector('.cart-items');
-    const cartCount = document.querySelector('.cart-count');
     const cartTotal = document.querySelector('.total-amount');
 
-    cartIcon.addEventListener('click', (e) => {
-        e.preventDefault();
-        cartPreview.classList.toggle('active');
-    });
-
-    closeCart.addEventListener('click', () => {
-        cartPreview.classList.remove('active');
-    });
+    if (cartIcon && cartPreview && closeCart) {
+        cartIcon.addEventListener('click', (e) => {
+            e.preventDefault();
+            cartPreview.classList.toggle('active');
+        });
+        closeCart.addEventListener('click', () => {
+            cartPreview.classList.remove('active');
+        });
+    }
 
     addToCartBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -109,15 +196,15 @@ document.addEventListener('DOMContentLoaded', function() {
             let productName, productPrice, productQuantity, productImg;
 
             if (card.classList.contains('custom-builder')) {
-                productName = 'Custom Smoothie';
-                productPrice = parseFloat(document.querySelector('.builder-price').textContent.replace('Total: BWP', ''));
+                productName = card.classList.contains('smoothie-builder') ? 'Custom Smoothie' : 'Custom Fruit Salad';
+                productPrice = parseFloat(card.querySelector('.builder-price').textContent.replace('Total: BWP', ''));
                 productQuantity = 1;
-                productImg = 'images/custom-smoothie.jpg';
+                productImg = card.classList.contains('smoothie-builder') ? 'images/custom-smoothie.jpg' : 'images/custom-fruit-salad.jpg';
             } else {
                 productName = card.querySelector('h4').textContent;
                 productPrice = parseFloat(card.querySelector('p').textContent.match(/BWP\s*(\d+\.\d{2})/)?.[1] || 0);
                 productQuantity = parseInt(card.querySelector('.quantity')?.textContent || 1);
-                productImg = card.querySelector('img').src;
+                productImg = card.querySelector('img')?.src || 'images/placeholder.jpg';
             }
 
             const existingItem = cart.find(item => item.name === productName);
@@ -173,156 +260,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    document.querySelector('.checkout-btn').addEventListener('click', () => {
+    document.querySelector('.checkout-btn')?.addEventListener('click', () => {
         if (cart.length === 0) {
             alert('Your cart is empty!');
             return;
         }
-        window.location.href = 'checkout.html'; // Placeholder for checkout page
+        window.location.href = 'checkout.html';
     });
 
     updateCart();
-});
-document.addEventListener('DOMContentLoaded', function() {
-    // Tab Switching
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            document.querySelectorAll('.tab-btn').forEach(b => {
-                b.classList.remove('active');
-                b.setAttribute('aria-selected', 'false');
-            });
-            document.querySelectorAll('.category-content').forEach(c => c.classList.remove('active'));
-            btn.classList.add('active');
-            btn.setAttribute('aria-selected', 'true');
-            document.getElementById(btn.dataset.tab).classList.add('active');
-        });
-    });
-
-    // Newsletter Form
-    const form = document.querySelector('.form');
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const formData = new FormData(form);
-        try {
-            await fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            });
-            form.reset();
-            alert('Thank you for subscribing!');
-        } catch (error) {
-            alert('Error subscribing. Please try again.');
-        }
-    });
-
-    // Cart Count
-    const cartCount = document.querySelector('.cart-count');
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    cartCount.textContent = totalItems;
-    document.querySelector('.cart-icon').setAttribute('aria-label', `View cart, ${totalItems} items`);
-});
-document.addEventListener('DOMContentLoaded', function() {
-    // Contact Form
-    const form = document.querySelector('.form');
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const formData = new FormData(form);
-        try {
-            await fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            });
-            form.reset();
-            alert('Thank you for your message!');
-        } catch (error) {
-            alert('Error sending message. Please try again.');
-        }
-    });
-
-    // Cart Count
-    const cartCount = document.querySelector('.cart-count');
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    cartCount.textContent = totalItems;
-    document.querySelector('.cart-icon').setAttribute('aria-label', `View cart, ${totalItems} items`);
-});
-document.addEventListener('DOMContentLoaded', function() {
-    // Newsletter Form
-    const form = document.querySelector('.form');
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const formData = new FormData(form);
-        try {
-            await fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            });
-            form.reset();
-            alert('Thank you for subscribing!');
-        } catch (error) {
-            alert('Error subscribing. Please try again.');
-        }
-    });
-
-    // Cart Count
-    const cartCount = document.querySelector('.cart-count');
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    cartCount.textContent = totalItems;
-    document.querySelector('.cart-icon').setAttribute('aria-label', `View cart, ${totalItems} items`);
-});
-document.addEventListener('DOMContentLoaded', function() {
-    // Category Tabs
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const blogPosts = document.querySelectorAll('.blog-post');
-
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Remove active class from all buttons
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
-            button.classList.add('active');
-
-            const category = button.getAttribute('data-category');
-
-            // Show/hide posts based on category
-            blogPosts.forEach(post => {
-                const postCategory = post.getAttribute('data-category');
-                if (category === 'all' || category === postCategory) {
-                    post.style.display = 'block';
-                } else {
-                    post.style.display = 'none';
-                }
-            });
-        });
-    });
-
-    // Newsletter Form
-    const form = document.querySelector('.form');
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const formData = new FormData(form);
-        try {
-            await fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            });
-            form.reset();
-            alert('Thank you for subscribing!');
-        } catch (error) {
-            alert('Error subscribing. Please try again.');
-        }
-    });
-
-    // Cart Count
-    const cartCount = document.querySelector('.cart-count');
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    cartCount.textContent = totalItems;
-    document.querySelector('.cart-icon').setAttribute('aria-label', `View cart, ${totalItems} items`);
 });
