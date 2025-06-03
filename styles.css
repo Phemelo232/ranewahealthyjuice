@@ -33,7 +33,7 @@ header {
 }
 
 main {
-    margin-top: 5px;
+    margin-top: 0px;
     min-height: calc(100vh - 160px); 
 }
 
